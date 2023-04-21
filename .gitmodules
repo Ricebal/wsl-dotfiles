@@ -1,0 +1,3 @@
+[submodule "git/WSL-passwordstore-menu"]
+	path = git/WSL-passwordstore-menu
+	url = git@github.com:Ricebal/WSL-passwordstore-menu.git
