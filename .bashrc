@@ -24,7 +24,6 @@ export BROWSER="/mnt/c/Program Files/Mozilla Firefox/firefox.exe"
 # Display export
 export DISPLAY=$(hostname).local:0
 export LIBGL_ALWAYS_INDIRECT=1
-sudo /etc/init.d/dbus start &> /dev/null
 
 # append to the history file, don't overwrite it
 shopt -s histappend
