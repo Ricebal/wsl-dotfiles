@@ -1,6 +1,14 @@
+# XDG directories
+## User directories
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_STATE_HOME=$HOME/.local/state
+export XDG_RUNTIME_DIR=/run/user/$UID
+
 # Enable colors and change prompt:
 autoload -U colors && colors
-source $HOME/.ohmyzsh
+source $XDG_CONFIG_HOME/zsh/ohmyzsh
 #PS1="%n@%m %~ "
 #PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
 
@@ -11,7 +19,7 @@ source $HOME/.keychain/$HOST-sh
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.cache/zsh/history
+HISTFILE=$XDG_CACHE_HOME/zsh/history
 
 # Basic auto/tab complete:
 autoload -U compinit
@@ -68,7 +76,16 @@ autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 
 # Load aliases and shortcuts if existent.
-[ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
+[ -f "$XDG_CONFIG_HOME/zsh/aliases" ] && source "$XDG_CONFIG_HOME/zsh/aliases"
+
+# Set path
+if [ -d "$HOME/bin" ] ; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
 
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
