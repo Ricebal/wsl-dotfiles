@@ -8,6 +8,9 @@ source $XDG_CONFIG_HOME/zsh/ohmyzsh
 /usr/bin/keychain -q --nogui $HOME/.ssh/id_rsa
 source $HOME/.keychain/$HOST-sh
 
+# Pass cliptime
+export PASSWORD_STORE_CLIP_TIME=45
+
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
