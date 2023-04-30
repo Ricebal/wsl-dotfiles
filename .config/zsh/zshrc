@@ -11,7 +11,7 @@ source $HOME/.keychain/$HOST-sh
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=$XDG_CACHE_HOME/zsh/history
+HISTFILE=$XDG_STATE_HOME/zsh/history
 
 # Basic auto/tab complete:
 autoload -U compinit
