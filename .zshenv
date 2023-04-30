@@ -11,3 +11,6 @@ export XDG_CONFIG_DIRS="${XDG_CONFIG_DIRS:-/etc/xdg}"
 
 # ZSH
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+
+# Pass
+export PASSWORD_STORE_DIR=$XDG_DATA_HOME/password-store
