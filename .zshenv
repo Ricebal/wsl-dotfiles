@@ -9,6 +9,9 @@ export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$UID}"
 export XDG_DATA_DIRS="${XDG_DATA_DIRS:-/usr/local/share:/usr/share}"
 export XDG_CONFIG_DIRS="${XDG_CONFIG_DIRS:-/etc/xdg}"
 
+# Windows Home Folder
+export WINHOME=$(wslpath "$(wslvar USERPROFILE)")
+
 # ZSH
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 
