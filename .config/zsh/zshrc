@@ -1,8 +1,7 @@
 # Enable colors and change prompt:
 autoload -U colors && colors
-source $XDG_CONFIG_HOME/zsh/ohmyzsh
 #PS1="%n@%m %~ "
-#PS1="${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$"
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%} $%b "
 
 # Keychain
 /usr/bin/keychain -q --nogui $HOME/.ssh/id_rsa
